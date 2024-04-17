@@ -2,7 +2,7 @@ package classes;
 
 import javax.swing.*;
 import java.io.File;
-
+//pito
 public class Fitxer {
     JFileChooser navegaFitxer;
     File fitxer;
