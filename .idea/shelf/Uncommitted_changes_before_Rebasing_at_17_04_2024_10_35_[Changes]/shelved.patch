@@ -1,0 +1,38 @@
+Index: src/classes/Fitxer.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package classes;\r\n\r\nimport javax.swing.*;\r\nimport java.io.File;\r\n\r\npublic class Fitxer {\r\n    JFileChooser navegaFitxer;\r\n    File fitxer;\r\n\r\n    public Fitxer() {\r\n        navegaFitxer = new JFileChooser();\r\n        navegaFitxer.setFileSelectionMode(\r\n                JFileChooser.FILES_AND_DIRECTORIES);\r\n        navegaFitxer.showOpenDialog(null);\r\n        fitxer = navegaFitxer.getSelectedFile();\r\n\r\n        // Mostra informació del fitxer\r\n        if (fitxer != null) {\r\n            System.out.format(\"Nom del fitxer escollit: %s\\n\", fitxer.getName());\r\n            System.out.format(\"Ruta del fitxer escollit: %s\\n\", fitxer.getPath());\r\n            System.out.format(\"És pot llegir  : %s\\n\", ((fitxer.canRead()) ? \"SI\" : \"NO\"));\r\n            System.out.format(\"És pot escriure: %s\\n\", ((fitxer.canWrite()) ? \"SI\" : \"NO\"));\r\n            System.out.format(\"És pot executar: %s\\n\", ((fitxer.canExecute()) ? \"SI\" : \"NO\"));\r\n            System.out.format(\"La mida del fitxer escollit: %s\\n\", fitxer.length());\r\n            System.out.format(\"És un directori: %s\\n\", ((fitxer.isDirectory()) ? \"SI\" : \"NO\"));\r\n            if (fitxer.isDirectory()) {\r\n                System.out.printf(\"Contingut del directori\\n\");\r\n                for (File file : fitxer.listFiles()) {\r\n                    System.out.format(\"\\t%s\\n\", file);\r\n                }\r\n            }\r\n        }\r\n    }\r\n\r\n    public static void main(String[] args) {\r\n        new Fitxer();\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/classes/Fitxer.java b/src/classes/Fitxer.java
+--- a/src/classes/Fitxer.java	(revision 3df69b9102367e07c0a7a44e20b89965adfbbc76)
++++ b/src/classes/Fitxer.java	(date 1713342914135)
+@@ -2,7 +2,7 @@
+ 
+ import javax.swing.*;
+ import java.io.File;
+-
++//pito
+ public class Fitxer {
+     JFileChooser navegaFitxer;
+     File fitxer;
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_11\" default=\"true\" project-jdk-name=\"11\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/out\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision 3df69b9102367e07c0a7a44e20b89965adfbbc76)
++++ b/.idea/misc.xml	(date 1713342914598)
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/out" />
+   </component>
+ </project>
+\ No newline at end of file
